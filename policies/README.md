@@ -1,16 +1,15 @@
 ### Lab 3-3 Information
- METADATA  
- title: SC-28 - Encryption at Rest (GCS)  
+
+__title: SC-28 - Encryption at Rest (GCS)__  
+ description: "Every google_storage_bucket must encrypt at rest with a customer-managed encryption key (CMEK)."  
+ custom:  
    control_id: SC-28  
    framework: nist-800-53  
    severity: high  
-
- fix:   
-  uniform_bucket_level_access = true  
-  public_access_prevention    = "enforced"  
+   remediation: "Add an encryption { default_kms_key_name = ... } block referencing a google_kms_crypto_key you control."  
 
 
- title: AC-3 - Access Enforcement (no public GCS or open firewall)  
+__ title: AC-3 - Access Enforcement (no public GCS or open firewall)__    
  description: "GCS buckets must enforce uniform_bucket_level_access AND public_access_prevention=enforced.   
  Firewall rules must not allow 0.0.0.0/0 on management ports (22, 3389)."  
  custom:  
@@ -19,7 +18,7 @@
    severity: critical  
    remediation: "Set uniform_bucket_level_access = true, public_access_prevention = enforced. For firewalls, narrow source_ranges or remove the rule."  
 
- title: CM-6 - Configuration Settings (required compliance labels). 
+__ title: CM-6 - Configuration Settings (required compliance labels)__  
  description: "Every taggable resource must carry the four required labels: project, environment, managed_by, compliance_scope."  
  custom:  
    control_id: CM-6. 
