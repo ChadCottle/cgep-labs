@@ -28,7 +28,7 @@ __title: CM-6 - Configuration Settings (required compliance labels)__
    remediation: "Add the four required labels (project, environment, managed_by, compliance_scope) to the resource."  
 
 
-__policies/sc28_encryption_aws.rego__    
+__policies/sc28_encryption_aws.rego__       
 title: SC-28 - Encryption at Rest (AWS S3)  
 description: "Every aws_s3_bucket must have an aws_s3_bucket_server_side_encryption_configuration that references it."  
 custom:  
