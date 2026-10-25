@@ -9,7 +9,7 @@ __title: SC-28 - Encryption at Rest (GCS)__
    remediation: "Add an encryption { default_kms_key_name = ... } block referencing a google_kms_crypto_key you control."  
 
 
-__ title: AC-3 - Access Enforcement (no public GCS or open firewall)__    
+__title: AC-3 - Access Enforcement (no public GCS or open firewall)__    
  description: "GCS buckets must enforce uniform_bucket_level_access AND public_access_prevention=enforced.   
  Firewall rules must not allow 0.0.0.0/0 on management ports (22, 3389)."  
  custom:  
@@ -18,7 +18,7 @@ __ title: AC-3 - Access Enforcement (no public GCS or open firewall)__
    severity: critical  
    remediation: "Set uniform_bucket_level_access = true, public_access_prevention = enforced. For firewalls, narrow source_ranges or remove the rule."  
 
-__ title: CM-6 - Configuration Settings (required compliance labels)__  
+__title: CM-6 - Configuration Settings (required compliance labels)__  
  description: "Every taggable resource must carry the four required labels: project, environment, managed_by, compliance_scope."  
  custom:  
    control_id: CM-6. 
