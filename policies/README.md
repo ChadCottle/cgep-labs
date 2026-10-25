@@ -38,7 +38,7 @@ custom:
   remediation: "Add aws_s3_bucket_server_side_encryption_configuration { bucket = aws_s3_bucket.<name>.id ... } for the bucket."  
 
 
-__ policies/ac3_no_public_aws.rego__  
+__policies/ac3_no_public_aws.rego__  
  title: AC-3 - Access Enforcement (AWS S3 public access block)  
  description: "Every aws_s3_bucket must have an aws_s3_bucket_public_access_block referencing it, with all four flags true."  
  custom:  
