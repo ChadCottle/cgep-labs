@@ -7,7 +7,6 @@
 tfplan
 *.tfplan
 crash.log
-bundle.sig.bundle
 
 # OS noise
 .DS_Store
