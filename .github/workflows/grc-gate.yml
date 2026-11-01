@@ -101,6 +101,15 @@ jobs:
         run: |
           cp "$TF_WORKING_DIR"/plan.json evidence/lab-4-3/plan.json
           cp "$TF_WORKING_DIR"/plan.txt  evidence/lab-4-3/plan.txt
+      - name: Upload evidence artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grc-evidence-${{ github.run_id }}
+          path: |
+            evidence/lab-4-3/
+            evidence/lab-4-4/
+            retention-days: 90
 - name: Bundle + sign + upload to vault
   id: sign
   if: always()
@@ -139,9 +148,10 @@ jobs:
     aws s3 cp receipt.json "s3://${VAULT}/${KEY_PREFIX}/receipt.json"
     mkdir -p evidence/lab-4-4
     cp receipt.json evidence/lab-4-4/receipt.json
-    
+
       - name: Enforce gate
         if: always()
         run: |
           test "${{ steps.conftest.outcome }}" = "success" \
             && test "${{ steps.tfsec.outcome }}" = "success"
+      #updated for lab 4-4
