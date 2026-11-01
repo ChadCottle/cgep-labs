@@ -154,4 +154,3 @@ jobs:
         run: |
           test "${{ steps.conftest.outcome }}" = "success" \
             && test "${{ steps.tfsec.outcome }}" = "success"
-      #updated for lab 4-4
