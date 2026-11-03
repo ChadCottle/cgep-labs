@@ -12,9 +12,9 @@
 **CM-2/CM-6/CM-8 (Config):** Config is enabled but not under my control as this account is part of an organization. However, it still demonstrates a finding. CM-2: Baseline Configuration is clearly enabled. While not known to me, CM-6: Configuration Settings are enabled. CM-8: Information System Component Inventory is exactly what Config is used for.  
 
 ### Verification  
-`aws cloudtrail get-trail-status --name = "trail_name"` returns "IsLogging": true. 
-**Note:** the --name (above) is a necessary. 
-`aws securityhub describe-hub` returns the hub ARN. 
-At least one finding appears within 30 minutes. 
-evidence/lab-5-2/security-hub-findings.json is captured and non-empty  
+`aws cloudtrail get-trail-status --name = "trail_name"` returns "IsLogging": true.   
+**Note:** the --name (above) is a necessary.  
+`aws securityhub describe-hub` returns the hub ARN.   
+At least one finding appears within 30 minutes.  
+evidence/lab-5-2/security-hub-findings.json is captured and non-empty    
 
